@@ -1,6 +1,6 @@
 ## Block Scope: Let vs Var
 
-ES6 introduced _let_ variables and _block scoping_. Because new versions of JavaScript needs to remain backwards-compatible, the couldn't change the behavior of _var_ variables or get rid of them completely.  The result is that _let_ variables behave very differently than _var_'s when enclosed by curly braces. 
+Eave very differently than _var_'s when enclosed by curly braces. 
 
 _Let_ variables will be confined to the braces where they were created: _block scoping_.
 
@@ -12,9 +12,9 @@ The example below illustrates how _var_ & _let_ variables are treated differentl
 * [Learning Objective](#learning-objective)
 * [The Code](#the-code)
 * [Helpful Links](#helpful-links)
-* [Step-Through](#step-through)
+* [Run-Time Sketches](#run-time-sketches)
 * [PyTut Link](https://goo.gl/TMzZRs)
-* [Parsons Practice](https://elewa-academy.github.io/block-scope-let-vs-var)
+* [More Practice](https://elewa-academy.github.io/block-scope-let-vs-var)
 
 ___
 
@@ -56,7 +56,7 @@ __Let__'s temporal dead zone. (from step 3):
 
 ___
 
-## Step Through
+## Run-Time Sketches
 
 ![](./step-through/step-1.png)
 ![](./step-through/step-2.png)

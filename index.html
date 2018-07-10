@@ -26,33 +26,57 @@
         
         <div>
         	<!-- your problem description goes here -->
+            <h1>Block Scope: Let vs Var</h1>
 			This example illustrates how let & var behave differently with block scoping.
+            <br>
+            <a href="https://github.com/elewa-academy/block-scope-let-vs-var">back to the repo</a>
+            <br>
         </div>
-        <script>
-        	// define your challenge here 
-			var challenge = 
-                    "let global_let = 'global let'; \n" +
-                    "console.log('leaving global scope'); \n" +
-                    "{ \n" +
-                    "    console.log('entering block scope'); \n" +
-                    "    var inner_var = 'global var'; \n" +
-                    "    let inner_let = 'inner let'; \n" +
-                    "    console.log('leaving block scope'); \n" +
-                    "}; \n" +
-                    "console.log('re-entering global scope'); \n" +
-                    "inner_var = 'modified globally'; \n" +
-                    "console.log('final state');"
-        </script>
+        <hr>
+        <div id="pytut">
+            <h2>Step Through</h2>
+            <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=let%20global_let%20%3D%20'global%20let'%3B%0Aconsole.log%28'leaving%20global%20scope'%29%3B%0A%7B%0A%20%20%20%20console.log%28'entering%20block%20scope'%29%3B%0A%20%20%20%20var%20inner_var%20%3D%20'global%20var'%3B%0A%20%20%20%20let%20inner_let%20%3D%20'inner%20let'%3B%0A%20%20%20%20console.log%28'leaving%20block%20scope'%29%3B%0A%7D%3B%0Aconsole.log%28're-entering%20global%20scope'%29%3B%0Ainner_var%20%3D%20'modified%20globally'%3B%0Aconsole.log%28'final%20state'%29%3B&codeDivHeight=400&codeDivWidth=350&curInstr=0&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"> </iframe>
+        </div>
+        <hr>
+        <div id="parsons">
+            <h2>Parsons Practice</h2>
+            <script>
+            	// define your challenge here 
+    			var challenge = 
+                        "let global_let = 'global let'; \n" +
+                        "console.log('leaving global scope'); \n" +
+                        "{ \n" +
+                        "    console.log('entering block scope'); \n" +
+                        "    var inner_var = 'global var'; \n" +
+                        "    let inner_let = 'inner let'; \n" +
+                        "    console.log('leaving block scope'); \n" +
+                        "}; \n" +
+                        "console.log('re-entering global scope'); \n" +
+                        "inner_var = 'modified globally'; \n" +
+                        "console.log('final state');"
+            </script>
 
-        <!-- what you see -->
-        <div id="sortableTrash" class="sortable-code"></div>
-        <div id="sortable" class="sortable-code">
+            <!-- what you see -->
+            <div id="sortableTrash" class="sortable-code"></div>
+            <div id="sortable" class="sortable-code">
+            </div>
+            <div style="clear:both;"></div>
+            <p>
+                <a href="#" id="newInstanceLink">New instance</a>
+                <a href="#" id="feedbackLink">Get feedback</a>
+            </p>
         </div>
-        <div style="clear:both;"></div>
-        <p>
-            <a href="#" id="newInstanceLink">New instance</a>
-            <a href="#" id="feedbackLink">Get feedback</a>
-        </p>
+        <hr>
+        <div id="replit">
+            <h2>play with it</h2>
+            <iframe height="600px" width="100%" src="https://repl.it/@colevandersWands/block-scope-let-vs-var?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </div>
+        <hr>
         <a href="https://github.com/elewa-academy/block-scope-let-vs-var">back to the repo</a>
+                <hr>
+        <hr>
+        <a href="http://elewa.education/blog" target="_blank"><img src="https://user-images.githubusercontent.com/18554853/34921062-506450ae-f97d-11e7-875f-6feeb26ad72d.png" width="150" height="60"/></a>
+        <br>
+        <br>
     </body>
 </html>
