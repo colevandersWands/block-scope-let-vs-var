@@ -2,12 +2,20 @@
 <html>
     <head>
         <title>Name Me</title>
-        <!-- Don't touch these things -->
-        <link href="../../utils/parsons.css" rel="stylesheet" />
-        <link href="../../utils/lib/prettify.css" rel="stylesheet" />
+        
+        <!-- the scripts that make it work -->
+        <link href="./utils/parsons.css" rel="stylesheet" />
+        <link href="./utils/lib/prettify.css" rel="stylesheet" />
+        <script src="./utils/lib/prettify.js"></script>
+        <script src="./utils/include.js"></script>
+        <script src="./utils/lib/jquery.min.js"></script>
+        <script src="./utils/lib/jquery-ui.min.js"></script>
+        <script src="./utils/lib/jquery.ui.touch-punch.min.js"></script>
+        <script src="./utils/lib/underscore-min.js"></script>
+        <script src="./utils/lib/lis.js"></script>
+        <script src="./utils/parsons.js"></script>
+        <script src='./utils/index.js'></script>
 
-        <script src="../../utils/lib/prettify.js"></script>
-        <script src="../../utils/include.js"></script>
         <script>
             window.onload = function() {
                 init(challenge);
@@ -18,20 +26,22 @@
         
         <div>
         	<!-- your problem description goes here -->
-			A basic While Loop. <a href="https://github.com/elewa-academy/scope-and-control-flow/tree/master/3-loops/1-while-loops" target="_blank">Step-through right here<a>.
+			This example illustrates how let & var behave differently with block scoping.
         </div>
         <script>
         	// define your challenge here 
 			var challenge = 
-                "let result = \'\';\n" +
-
-                "let stepper = 0;\n" +
-                "while (stepper < 2) {\n" +
-                "  result += stepper;\n" +
-                "  stepper++;\n" +
-                "};\n" +
-
-                "console.log(result); \n" 
+                    "let global_let = 'global let'; \n" +
+                    "console.log('leaving global scope'); \n" +
+                    "{ \n" +
+                    "    console.log('entering block scope'); \n" +
+                    "    var inner_var = 'global var'; \n" +
+                    "    let inner_let = 'inner let'; \n" +
+                    "    console.log('leaving block scope'); \n" +
+                    "}; \n" +
+                    "console.log('re-entering global scope'); \n" +
+                    "inner_var = 'modified globally'; \n" +
+                    "console.log('final state');"
         </script>
 
         <!-- what you see -->
@@ -43,15 +53,6 @@
             <a href="#" id="newInstanceLink">New instance</a>
             <a href="#" id="feedbackLink">Get feedback</a>
         </p>
-        <a href="../../index.html">HOME</a>
-
-        <!-- why it works -->
-        <script src="../../utils/lib/jquery.min.js"></script>
-        <script src="../../utils/lib/jquery-ui.min.js"></script>
-        <script src="../../utils/lib/jquery.ui.touch-punch.min.js"></script>
-        <script src="../../utils/lib/underscore-min.js"></script>
-        <script src="../../utils/lib/lis.js"></script>
-        <script src="../../utils/parsons.js"></script>
-        <script src='../../utils/index.js'></script>
+        <a href="https://github.com/elewa-academy/block-scope-let-vs-var">back to the repo</a>
     </body>
 </html>
