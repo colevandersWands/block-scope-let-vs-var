@@ -15,35 +15,45 @@
         <script src="./utils/lib/lis.js"></script>
         <script src="./utils/parsons.js"></script>
         <script src='./utils/index.js'></script>
-
-        <script>
-            window.onload = function() {
-                init(challenge);
-            }
-        </script>
     </head>
     <body>
         
         <div>
         	<!-- your problem description goes here -->
-            <h1>Block Scope: Let vs Var</h1>
-			This example illustrates how let & var behave differently with block scoping.
+            <h1><a href="https://github.com/elewa-academy/block-scope-let-vs-var">Block Scope: Let vs Var</a></h1>
             <br>
-            <a href="https://github.com/elewa-academy/block-scope-let-vs-var">back to the repo</a>
             <br>
         </div>
         <hr>
-        <hr>
-        <div id="replit">
-            <h2>play with it</h2>
-            <iframe height="600px" width="100%" src="https://repl.it/@colevandersWands/block-scope-let-vs-var?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        <div id="pytut">
+            <h2><a href="https://goo.gl/TMzZRs" target="_blank">PyTut Link</a></h2>
+            <iframe width="800" height="500" frameborder="0" src="http://pythontutor.com/iframe-embed.html#code=let%20global_let%20%3D%20'global%20let'%3B%0Aconsole.log%28'leaving%20global%20scope'%29%3B%0A%7B%0A%20%20%20%20console.log%28'entering%20block%20scope'%29%3B%0A%20%20%20%20var%20inner_var%20%3D%20'global%20var'%3B%0A%20%20%20%20let%20inner_let%20%3D%20'inner%20let'%3B%0A%20%20%20%20console.log%28'leaving%20block%20scope'%29%3B%0A%7D%3B%0Aconsole.log%28're-entering%20global%20scope'%29%3B%0Ainner_var%20%3D%20'modified%20globally'%3B%0Aconsole.log%28'final%20state'%29%3B&codeDivHeight=400&codeDivWidth=350&curInstr=0&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D"> </iframe>
         </div>
         <hr>
         <div id="parsons">
-            <h2>Parsons Practice</h2>
+            <div name="parsons-boxes">
+                <!-- modify this line's id -->
+                <div id="shuffled-let-vs-var" name="shuffled" class="sortable-code"></div>
+                <!-- modify this line's id -->
+                <div id="sorted-let-vs-var" name="sorted" class="sortable-code"></div> 
+                <div style="clear:both;"></div>
+            </div>
+
+            <div name="parsons-buttons">
+                <!-- modify this line's id -->
+                <a href="#" id="reshuffle-let-vs-var" name="reshuffle">Re-Shuffle</a>
+                <!-- modify this line's id -->
+                <a href="#" id="feedback-let-vs-var" name="feedback">Get feedback</a>
+            </div>
             <script>
-            	// define your challenge here 
-    			var challenge = 
+                // define your challenge here
+                config = {};
+
+                config.shuffled_id = "shuffled-let-vs-var";
+                config.sorted_id = "sorted-let-vs-var";
+                config.reshuffle_id = "reshuffle-let-vs-var";
+                config.feedback_id = "feedback-let-vs-var";
+                config.challenge = // guidelines here for how code should be
                         "let global_let = 'global let'; \n" +
                         "console.log('leaving global scope'); \n" +
                         "{ \n" +
@@ -55,18 +65,32 @@
                         "console.log('re-entering global scope'); \n" +
                         "inner_var = 'modified globally'; \n" +
                         "console.log('final state');"
-            </script>
 
-            <!-- what you see -->
-            <div id="sortableTrash" class="sortable-code"></div>
-            <div id="sortable" class="sortable-code">
-            </div>
-            <div style="clear:both;"></div>
-            <p>
-                <a href="#" id="newInstanceLink">New instance</a>
-                <a href="#" id="feedbackLink">Get feedback</a>
-            </p>
+                init_section(config);
+            </script>
+            <br>
         </div>
+        <hr>
+        <div id="replit-demo">
+            <h2>play with it</h2>
+            <iframe height="600px" width="100%" src="https://repl.it/@colevandersWands/block-scope-let-vs-var?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </div>
+        <hr>
+        <div id="replit-ex-1">
+            <h2>Exercise 1</h2>
+            <iframe height="400px" width="100%" src="https://repl.it/@colevandersWands/let-vs-var-ex-1?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </div>
+        <hr>
+        <div id="replit-ex-2">
+            <h2>Exercise 2</h2>
+            <iframe height="400px" width="100%" src="https://repl.it/@colevandersWands/let-vs-var-ex-2?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </div>
+        <hr>
+        <div id="replit-ex-3">
+            <h2>Exercise 3</h2>
+            <iframe height="400px" width="100%" src="https://repl.it/@colevandersWands/let-vs-var-ex-3?lite=true" scrolling="no" frameborder="no" allowtransparency="true" allowfullscreen="true" sandbox="allow-forms allow-pointer-lock allow-popups allow-same-origin allow-scripts allow-modals"></iframe>
+        </div>
+        <hr>
         <a href="https://github.com/elewa-academy/block-scope-let-vs-var">back to the repo</a>
                 <hr>
         <hr>

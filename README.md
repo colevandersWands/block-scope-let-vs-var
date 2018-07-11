@@ -10,11 +10,10 @@ The example below illustrates how _var_ & _let_ variables are treated differentl
 
 ### Index
 * [Learning Objective](#learning-objective)
-* [The Code](#the-code)
+* [Study Snippet](#study-snippet)
 * [Helpful Links](#helpful-links)
+* [Interactive Practice](https://elewa-academy.github.io/block-scope-let-vs-var)
 * [Run-Time Sketches](#run-time-sketches)
-* [PyTut Link](https://goo.gl/TMzZRs)
-* [More Practice](https://elewa-academy.github.io/block-scope-let-vs-var)
 
 ___
 
@@ -26,7 +25,7 @@ A set of opening and closing curly braces create a new _block scope_.  __let__ v
 
 ___
  
-## The Code
+## Study Snippet
 
 ```js
 let global_let = 'global let';

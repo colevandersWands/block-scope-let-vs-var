@@ -4,20 +4,35 @@ function displayErrors(fb) {
     }
 } 
 
-function init(initial){
+/* config:
+        challenge: String
+            - The code to study, defined like this:
+                "line 1 \n" +
+                "  block 1, line 2  \n" +
+                "line 3 \n";
+        shuffled_id: String
+            - id for the div with scrambled code
+        sorted_id: String
+            - id for the div with sorted code
+        reshuffle_id: String
+            - id for the reshuffle button in this section
+        feedback_id: String
+            - id for the feedback button in this section
+*/
+function init_section(config){
     var parson = new ParsonsWidget({
-        'sortableId': 'sortable',
-        'trashId': 'sortableTrash',
+        'sortableId': config.sorted_id,
+        'trashId': config.shuffled_id,
         'max_wrong_lines': 1,
         'feedback_cb' : displayErrors
     });
-    parson.init(initial);
+    parson.init(config.challenge);
     parson.shuffleLines();
-    $("#newInstanceLink").click(function(event){
+    $("#" + config.reshuffle_id).click(function(event){
         event.preventDefault();
         parson.shuffleLines();
     });
-    $("#feedbackLink").click(function(event){
+    $("#" + config.feedback_id).click(function(event){
         event.preventDefault();
         parson.getFeedback();
     });
