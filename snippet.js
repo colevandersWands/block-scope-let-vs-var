@@ -4,7 +4,7 @@ let outer_let = 'outer let';
 console.log('leaving outer scope');
 {
     console.log('entering block scope');
-    var inner_var = 'global var';
+    var aaa_var = 'global var';
     let inner_let = 'inner let';
     console.log('leaving block scope');
 };
