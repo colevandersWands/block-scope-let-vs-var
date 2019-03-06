@@ -12,7 +12,7 @@ The example below illustrates how _var_ & _let_ variables are treated differentl
 * [Learning Objective](#learning-objective)
 * [Study Snippet](#study-snippet)
 * [Helpful Links](#helpful-links)
-* [Interactive Practice](https://elewa-academy.github.io/block-scope-let-vs-var)
+* [Interactive Practice](https://janke-learning.github.io/block-scope-let-vs-var)
 * [Run-Time Sketches](#run-time-sketches)
 
 ___
