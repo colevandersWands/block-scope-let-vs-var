@@ -1,16 +1,19 @@
 ## Block Scope: Let vs Var
 
-Eave very differently than _var_'s when enclosed by curly braces. 
+_let_'s behave very differently than _var_'s when enclosed by curly braces. 
 
-_Let_ variables will be confined to the braces where they were created: _block scoping_.
+_Let_ variables will be confined to the frame where they are declared (as visualized by Python tutor). this includes any loops, conditionals, or bare curly braces: _block scoping_.
 
-_Var_ variables are hoisted outside of any curly braces they are in (except functions, this is a topic for later). 
+_Var_ variables are confined to the frame where they are declared (as visualized by Python tutor). The only curly braces that contain a _var_ is those of a function: _lexical scoping_ (more on this at another time).
 
-The example below illustrates how _var_ & _let_ variables are treated differently by JavaScript whenever a new block is created.
+The example below illustrates how _var_ & _let_ variables are treated differently by JavaScript whenever a new block is created inside a frame.
 
 ### Index
 * [Learning Objective](#learning-objective)
-* [Study Snippet](#study-snippet)
+* [Study Snippets](#study-snippets)
+  * [just let](#just-let)
+  * [just var](#just-var)
+  * [let and var](#let-and-var)
 * [Helpful Links](#helpful-links)
 * [Interactive Practice](https://janke-learning.github.io/block-scope-let-vs-var)
 * [Run-Time Sketches](#run-time-sketches)
@@ -25,8 +28,46 @@ A set of opening and closing curly braces create a new _block scope_.  __let__ v
 
 ___
  
-## Study Snippet
+## Study Snippets
 
+### just let
+
+[on pytut](http://www.pythontutor.com/live.html#code=let%20outer_let%20%3D%20'outer%20let'%3B%0Aconsole.log%28%22outer_let%3A%20%22,%20outer_let%29%3B%0Aconsole.log%28%22inner_let%3A%20%22,%20inner_let%29%3B%0A%7B%0A%20%20%20%20let%20inner_let%20%3D%20'inner%20let'%3B%0A%20%20%20%20console.log%28%22outer_let%3A%20%22,%20outer_let%29%3B%0A%20%20%20%20console.log%28%22inner_let%3A%20%22,%20inner_let%29%3B%0A%20%20%20%20outer_let%20%3D%20%22modified%20in%20block%20scope%22%3B%0A%7D%3B%0Aconsole.log%28%22outer_let%3A%20%22,%20outer_let%29%3B%0Aconsole.log%28%22inner_let%3A%20%22,%20inner_let%29%3B&cumulative=false&curInstr=3&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
+```js
+let outer_let = 'outer let';
+console.log("outer_let: ", outer_let);
+console.log("inner_let: ", inner_let);
+{
+    let inner_let = 'inner let';
+    console.log("outer_let: ", outer_let);
+    console.log("inner_let: ", inner_let);
+    outer_let = "modified in block scope";
+};
+console.log("outer_let: ", outer_let);
+console.log("inner_let: ", inner_let);
+```  
+
+### just var
+
+[on pytut](http://www.pythontutor.com/live.html#code=var%20outer_var%20%3D%20'outer%20var'%3B%0Aconsole.log%28%22outer_var%3A%20%22,%20outer_var%29%3B%0Aconsole.log%28%22inner_var%3A%20%22,%20inner_var%29%3B%0A%7B%0A%20%20%20%20var%20inner_var%20%3D%20'inner%20var'%3B%0A%20%20%20%20console.log%28%22outer_let%3A%20%22,%20outer_var%29%3B%0A%20%20%20%20console.log%28%22inner_let%3A%20%22,%20inner_var%29%3B%0A%20%20%20%20outer_var%20%3D%20%22modified%20in%20block%20scope%22%3B%0A%7D%3B%0Ainner_var%20%3D%20%22modified%20in%20global%20scope%22%3B%0Aconsole.log%28%22outer_var%3A%20%22,%20outer_var%29%3B%0Aconsole.log%28%22inner_var%3A%20%22,%20inner_var%29%3B&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
+```js
+var outer_var = 'outer var';
+console.log("outer_var: ", outer_var);
+console.log("inner_var: ", inner_var);
+{
+    var inner_var = 'inner var';
+    console.log("outer_let: ", outer_var);
+    console.log("inner_let: ", inner_var);
+    outer_var = "modified in block scope";
+};
+inner_var = "modified in global scope";
+console.log("outer_var: ", outer_var);
+console.log("inner_var: ", inner_var);
+```
+
+### let and var
+
+[on pytut](http://www.pythontutor.com/live.html#code=let%20outer_let%20%3D%20'outer%20let'%3B%0Aconsole.log%28'entering%20block%20scope'%29%3B%0A%7B%0A%20%20%20%20var%20inner_var%20%3D%20'global%20var'%3B%0A%20%20%20%20let%20inner_let%20%3D%20'inner%20let'%3B%0A%20%20%20%20console.log%28'leaving%20block%20scope'%29%3B%0A%7D%3B%0Ainner_var%20%3D%20'modified%20globally'%3B%0Aconsole.log%28'final%20state'%29%3B&cumulative=false&curInstr=0&heapPrimitives=nevernest&mode=display&origin=opt-live.js&py=js&rawInputLstJSON=%5B%5D&textReferences=false)  
 ```js
 let outer_let = 'outer let';
 console.log('leaving outer scope');
@@ -40,6 +81,8 @@ console.log('re-entering outer scope');
 inner_var = 'modified globally';
 console.log('final state');
 ```
+
+
 
 [TOP](#index)
 
